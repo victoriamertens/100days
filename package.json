@@ -1,0 +1,13 @@
+{
+  "name": "100-days-mono-repo",
+  "version": "1.0.0",
+  "private": "true",
+  "main": "index.js",
+  "author": "victoria-mertens",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "weather": "yarn workspace weather-app dev"
+  }
+}
