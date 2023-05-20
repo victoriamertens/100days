@@ -1,7 +1,11 @@
-export default function NextDays() {
+import sunny from '../public/sunny.svg';
+
+export default function NextDays(props) {
   return (
     <>
-      <p>Testing next NextDays</p>
+      <p>{props.day}</p>
+      <img src={sunny} alt="sun" />
+      <p>{props.temp}</p>
     </>
   );
 }

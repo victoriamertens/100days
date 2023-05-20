@@ -10,10 +10,10 @@ export default function WeatherCard() {
         <h3>clear sky</h3>
       </div>
       <div>
-        <NextDays />
-        <NextDays />
-        <NextDays />
-        <NextDays />
+        <NextDays day="Wednesday" temp="21°C" weathercode="0" />
+        <NextDays day="Thursday" temp="24°C" weathercode="3" />
+        <NextDays day="Friday" temp="21°C" weathercode="0" />
+        <NextDays day="Saturday" temp="24°C" weathercode="2" />
       </div>
     </div>
   );
