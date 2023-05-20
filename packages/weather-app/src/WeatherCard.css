@@ -1,0 +1,22 @@
+#weather-card {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('clouds.jpeg');
+  border-radius: 5px;
+}
+
+#forecast {
+  display: flex;
+  flex-direction: row;
+}
+
+#today {
+  display: flex;
+  flex-direction: row;
+}
+
+svg #main-svg {
+  background-color: blue;
+}
