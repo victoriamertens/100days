@@ -1,4 +1,4 @@
-import sunny from '../public/sunny.svg';
+import sunny from '/src/sunny.svg';
 
 export default function NextDays(props) {
   return (

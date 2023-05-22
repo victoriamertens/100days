@@ -1,6 +1,6 @@
 import NextDays from './NextDays';
 import './WeatherCard.css';
-import sunny from '../public/sunny.svg';
+import sunny from '/src/sunny.svg';
 
 export default function WeatherCard() {
   return (

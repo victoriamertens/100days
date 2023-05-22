@@ -3,7 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('clouds.jpeg');
+  /* background-image: url('clouds.jpeg');
+  background-position: center;
+  background-size: cover; */
   border-radius: 5px;
 }
 
