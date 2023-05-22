@@ -22,3 +22,35 @@
 svg #main-svg {
   background-color: blue;
 }
+
+.right {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+#today {
+  margin: 0px;
+  padding: 0px;
+  font-weight: lighter;
+}
+
+#location {
+  margin: 0px;
+  padding: 5px 0px 10px 0px;
+}
+
+#temp {
+  margin: 0px;
+  padding: 3px;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+#des {
+  margin: 0px;
+  padding: 3px;
+  font-weight: lighter;
+}

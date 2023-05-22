@@ -10,10 +10,10 @@ export default function WeatherCard() {
           <img id="main-svg" src={sunny} alt="sun" />
         </div>
         <div className="right">
-          <h3>Today</h3>
-          <h1>New York</h1>
-          <h3>Temperature: 17° C</h3>
-          <h3>clear sky</h3>
+          <h3 id="today">Today</h3>
+          <h1 id="location">New York</h1>
+          <h3 id="temp">Temperature: 17° C</h3>
+          <h3 id="des">clear sky</h3>
         </div>
       </div>
       <div id="forecast">
