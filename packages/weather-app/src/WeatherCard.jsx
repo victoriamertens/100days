@@ -8,21 +8,20 @@ export default function WeatherCard(responseObj) {
   let today = dayForecastArr[0];
 
   let icon = codeToIcon(today.weather[0].id);
-  // let icon = codeToIcon[category];
 
-  console.log(icon);
+  console.log(today.weather[0].description);
 
   return (
     <div id="weather-card">
       <div id="today">
         <div className="left">
-          <img id="main-svg" src={icon} alt="sun" />
+          <img id="main-svg" src={icon} alt="icon" />
         </div>
         <div className="right">
           <h3 id="day">Today</h3>
           <h1 id="location">New York</h1>
-          <h3 id="temp">Temperature: 17° C</h3>
-          <h3 id="des">clear sky</h3>
+          <h3 id="temp">Temperature: {today.main.temp}° F</h3>
+          <h3 id="des">{today.weather[0].description}</h3>
         </div>
       </div>
       <div id="forecast">

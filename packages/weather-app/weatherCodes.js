@@ -20,8 +20,8 @@ let response = {
       weather: [
         {
           id: 800,
-          main: 'Rain',
-          description: 'light rain',
+          main: 'clear',
+          description: 'clear sky',
           icon: '10d',
         },
       ],
