@@ -5,17 +5,15 @@ import { codeToIcon } from '../weatherCodes';
 
 export default function WeatherCard(responseObj) {
   let dayForecastArr = responseObj.response.list;
+
   let today = dayForecastArr[0];
-
-  let icon = codeToIcon(today.weather[0].id);
-
-  console.log(today.weather[0].description);
+  let iconToday = codeToIcon(today.weather[0].id);
 
   return (
     <div id="weather-card">
       <div id="today">
         <div className="left">
-          <img id="main-svg" src={icon} alt="icon" />
+          <img id="main-svg" src={iconToday} alt="icon" />
         </div>
         <div className="right">
           <h3 id="day">Today</h3>
@@ -25,10 +23,17 @@ export default function WeatherCard(responseObj) {
         </div>
       </div>
       <div id="forecast">
-        <NextDays day="Wednesday" temp="21°C" weathercode="0" />
-        <NextDays day="Thursday" temp="24°C" weathercode="3" />
-        <NextDays day="Friday" temp="21°C" weathercode="0" />
-        <NextDays day="Saturday" temp="24°C" weathercode="2" />
+        {dayForecastArr.map((day) => {
+          if (day !== dayForecastArr[0]) {
+            return (
+              <NextDays
+                key={day.dt}
+                info={day}
+                weathericon={codeToIcon(dayForecastArr[1].weather[0].id)}
+              />
+            );
+          }
+        })}
       </div>
     </div>
   );
