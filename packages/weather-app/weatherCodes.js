@@ -19,7 +19,7 @@ let response = {
       },
       weather: [
         {
-          id: 500,
+          id: 800,
           main: 'Rain',
           description: 'light rain',
           icon: '10d',
@@ -174,22 +174,22 @@ let response = {
   },
 };
 
-function codeToCategory(code) {
+function codeToIcon(code) {
   if (code === 800) {
-    return 7;
+    return icons[7];
   }
   console.log(Math.floor(code / 100));
-  return Math.floor(code / 100);
+  return icons[Math.floor(code / 100)];
 }
 
-let codeToIcon = {
+let icons = {
   2: 'thunder',
   3: 'drizzle',
   4: 'rain',
   5: 'snow',
   6: 'atmosphere',
-  7: 'sunny',
+  7: '/src/sunny.svg',
   8: 'cloudy',
 };
 
-export { response, codeToCategory, codeToIcon };
+export { response, codeToIcon };

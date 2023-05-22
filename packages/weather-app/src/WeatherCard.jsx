@@ -1,13 +1,22 @@
 import NextDays from './NextDays';
 import './WeatherCard.css';
-import sunny from '/src/sunny.svg';
+// import sunny from '/src/sunny.svg';
+import { codeToIcon } from '../weatherCodes';
 
-export default function WeatherCard() {
+export default function WeatherCard(responseObj) {
+  let dayForecastArr = responseObj.response.list;
+  let today = dayForecastArr[0];
+
+  let icon = codeToIcon(today.weather[0].id);
+  // let icon = codeToIcon[category];
+
+  console.log(icon);
+
   return (
     <div id="weather-card">
       <div id="today">
         <div className="left">
-          <img id="main-svg" src={sunny} alt="sun" />
+          <img id="main-svg" src={icon} alt="sun" />
         </div>
         <div className="right">
           <h3 id="day">Today</h3>
