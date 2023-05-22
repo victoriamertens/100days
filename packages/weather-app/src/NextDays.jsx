@@ -1,6 +1,6 @@
-import sunny from '/src/sunny.svg';
-import cloudy from '/src/cloudy.svg';
-import partly from '/src/partly.svg';
+import sunny from '/src/Icons/sunny.svg';
+import cloudy from '/src/Icons/cloudy.svg';
+import partly from '/src/Icons/partly.svg';
 import './NextDays.css';
 
 export default function NextDays(props) {

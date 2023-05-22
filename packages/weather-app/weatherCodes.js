@@ -184,12 +184,12 @@ function codeToIcon(code) {
 
 let icons = {
   2: 'thunder',
-  3: 'drizzle',
+  3: '/src/Icons/cloudy.svg',
   4: 'rain',
   5: 'snow',
   6: 'atmosphere',
-  7: '/src/sunny.svg',
-  8: 'cloudy',
+  7: '/src/Icons/sunny.svg',
+  8: '/src/Icons/partly.svg',
 };
 
 export { response, codeToIcon };
