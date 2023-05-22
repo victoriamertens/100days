@@ -17,12 +17,19 @@
 #today {
   display: flex;
   flex-direction: row;
+  width: 550px;
+  justify-content: space-evenly;
 }
 
-svg #main-svg {
-  background-color: blue;
+#main-svg {
+  width: 120px;
 }
-
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 50px;
+}
 .right {
   height: 200px;
   display: flex;
@@ -31,7 +38,7 @@ svg #main-svg {
   padding-top: 50px;
 }
 
-#today {
+#day {
   margin: 0px;
   padding: 0px;
   font-weight: lighter;
