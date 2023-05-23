@@ -1,6 +1,5 @@
 import NextDays from './NextDays';
 import './WeatherCard.css';
-// import sunny from '/src/sunny.svg';
 import { codeToIcon } from '../weatherCodes';
 
 export default function WeatherCard(responseObj) {

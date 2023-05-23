@@ -9,12 +9,26 @@
 }
 
 #city-input {
-  margin: auto;
   display: block;
   padding: 7px;
   padding-left: 20px;
   border-radius: 10px;
   width: 300px;
+  border: none;
+  box-shadow: -1px -1px 1px 1px rgb(177, 176, 176);
+}
+
+#search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#search-btn {
+  display: inline;
+  padding: 7px;
+  margin-left: 50px;
+  border-radius: 10px;
   border: none;
   box-shadow: -1px -1px 1px 1px rgb(177, 176, 176);
 }
