@@ -3,27 +3,16 @@ import './App.css';
 import { response } from '../weatherCodes.js';
 import { useState } from 'react';
 import axios from 'axios';
+import { fetchCoordinates, fetchWeather } from '../APIs';
 
 function App() {
   let [input, setInput] = useState('');
+  let [weather, setWeather] = useState({});
 
-  function fetchCoordinates(searchTerm) {
-    console.log('In fetch Coordinates', searchTerm);
-    //Decided to implement Amazon's Lambda service to handle the http request to keep app fully frontend/serverless
-    // axios({
-    //   method: 'GET',
-    //   url: 'https://api.api-ninjas.com/v1/geocoding?city=' + searchTerm,
-    //   header: { 'X-Api-Key': keyNinja },
-    // })
-    //   .then((res) => res.json()) // parse response as JSON
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((err) => console.log(err));
-  }
-
-  function fetchWeather(coordinates) {
-    console.log('In Fetch Weather');
+  async function cityToWeather(city) {
+    let coordinates = await fetchCoordinates(city);
+    let weather = await fetchWeather(coordinates);
+    setWeather(weather);
   }
 
   return (
@@ -35,7 +24,7 @@ function App() {
           id="city-input"
           onChange={(e) => setInput(e.target.value)}
         ></input>
-        <button id="search-btn" onClick={() => fetchCoordinates(input)}>
+        <button id="search-btn" onClick={() => cityToWeather(input)}>
           Search
         </button>
       </div>
