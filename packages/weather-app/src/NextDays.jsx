@@ -9,6 +9,9 @@ export default function NextDays(props) {
     4: 'Thursday',
     5: 'Friday',
     6: 'Saturday',
+    7: 'Sunday',
+    8: 'Monday',
+    9: 'Tuesday',
   };
 
   let temp = props.info.main.temp;
