@@ -7,7 +7,7 @@ import { fetchCoordinates, fetchWeather } from '../APIs';
 
 function App() {
   let [input, setInput] = useState('');
-  let [weather, setWeather] = useState({});
+  let [weather, setWeather] = useState(response);
 
   async function cityToWeather(city) {
     let coordinates = await fetchCoordinates(city);
@@ -28,7 +28,7 @@ function App() {
           Search
         </button>
       </div>
-      <WeatherCard response={response} />
+      <WeatherCard response={weather} />
     </div>
   );
 }
