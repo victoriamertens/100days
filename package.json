@@ -8,6 +8,9 @@
     "packages/*"
   ],
   "scripts": {
-    "weather": "yarn workspace weather-app dev"
+    "weather": "yarn workspace weather-app dev",
+    "weather_test": "yarn workspace weather-app test",
+    "weather_coverage": "yarn workspace weather-app coverage",
+    "vitest_ui": "yarn workspace weather-app vitestui"
   }
 }

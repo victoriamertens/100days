@@ -12,6 +12,12 @@ import axios from 'axios';
 //   })
 //   .catch((err) => console.log(err));
 
+export const cityToWeather = async (city) => {
+  let coordinates = await fetchCoordinates(city);
+  let weather = await fetchWeather(coordinates);
+  return weather;
+};
+
 export const fetchCoordinates = (city) => {
   console.log('In Coorinates', city);
 };
