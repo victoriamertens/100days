@@ -12,16 +12,21 @@ import axios from 'axios';
 //   })
 //   .catch((err) => console.log(err));
 
-export const cityToWeather = async (city) => {
+const cityToWeather = async (city) => {
   let coordinates = await fetchCoordinates(city);
   let weather = await fetchWeather(coordinates);
   return weather;
 };
 
-export const fetchCoordinates = (city) => {
+const fetchCoordinates = (city) => {
   console.log('In Coorinates', city);
+  return 0;
 };
 
-export const fetchWeather = (coordinates) => {
+const fetchWeather = (coordinates) => {
   console.log('In weather', coordinates);
+  return 0;
 };
+
+const fetchAPIs = { cityToWeather, fetchCoordinates, fetchWeather };
+export default fetchAPIs;
