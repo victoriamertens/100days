@@ -1,4 +1,5 @@
-import axios from 'axios';
+// import axios from 'axios';
+import utils from './utils';
 
 //Decided to implement Amazon's Lambda service to handle the http request to keep app fully frontend/serverless
 // axios({
@@ -13,20 +14,20 @@ import axios from 'axios';
 //   .catch((err) => console.log(err));
 
 const cityToWeather = async (city) => {
-  let coordinates = await fetchCoordinates(city);
-  let weather = await fetchWeather(coordinates);
+  let coordinates = await utils.fetchCoordinates(city);
+  let weather = await utils.fetchWeather(coordinates);
   return weather;
 };
 
-const fetchCoordinates = (city) => {
-  console.log('In Coorinates', city);
-  return 0;
-};
+// const fetchCoordinates = (city) => {
+//   console.log('In Coorinates', city);
+//   return 0;
+// };
 
-const fetchWeather = (coordinates) => {
-  console.log('In weather', coordinates);
-  return 0;
-};
+// const fetchWeather = (coordinates) => {
+//   console.log('In weather', coordinates);
+//   return 0;
+// };
 
-const fetchAPIs = { cityToWeather, fetchCoordinates, fetchWeather };
+const fetchAPIs = { cityToWeather };
 export default fetchAPIs;

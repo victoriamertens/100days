@@ -2,7 +2,7 @@ import WeatherCard from './WeatherCard';
 import './App.css';
 import { response } from '../weatherCodes.js';
 import { useState } from 'react';
-import { fetchCoordinates, fetchWeather, cityToWeather } from '../APIs';
+import { cityToWeather } from '../APIs';
 
 function App() {
   let [input, setInput] = useState('');
