@@ -1,0 +1,8 @@
+{
+  "name": "toggle-switch",
+  "version": "1.0.0",
+  "description": "toggle switch UI design ",
+  "main": "index.js",
+  "author": "Victoria Mertens ",
+  "license": "MIT"
+}
