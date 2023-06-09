@@ -33,6 +33,7 @@ input::after {
   height: 60px;
   width: 60px;
   background-color: rgb(248, 211, 3);
+  background-image: url('./blizzard2.png');
   box-shadow: 5px 2px 10px rgb(126, 126, 149);
   transition: left 0.3s;
   border: 2px solid rgb(245, 219, 70);
@@ -46,7 +47,9 @@ input:checked {
 
 input:checked::after {
   left: 80%;
-  background-color: rgb(190, 191, 192);
-  border: 2px solid rgb(193, 207, 208);
+  background-color: rgb(144, 145, 146);
+  background-image: url('./moontexture.jpeg');
+  background-size: 120px 120px;
+  border: 2px solid rgb(115, 115, 118);
   box-shadow: -5px 2px 10px rgb(67, 67, 70);
 }
