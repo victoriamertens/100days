@@ -2,14 +2,14 @@ import WeatherCard from './WeatherCard';
 import './App.css';
 import { response } from '../weatherCodes.js';
 import { useState } from 'react';
-import { cityToWeather } from '../APIs';
+import fetchAPIs from '../APIs';
 
 function App() {
   let [input, setInput] = useState('');
   let [weather, setWeather] = useState(response);
 
   const setNewWeather = (city) => {
-    let weather = cityToWeather(city);
+    let weather = fetchAPIs.cityToWeather(city);
     setWeather(weather);
   };
 
