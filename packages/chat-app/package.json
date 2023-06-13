@@ -1,0 +1,11 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "A live chat application using Socket.IO",
+  "main": "index.js",
+  "author": "Victoria Mertens ",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^4.6.2"
+  }
+}
