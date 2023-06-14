@@ -12,6 +12,7 @@
     "weather_test": "yarn workspace weather-app test",
     "weather_coverage": "yarn workspace weather-app coverage",
     "vitest_ui": "yarn workspace weather-app vitestui",
-    "toggle": "open packages/toggle-switch/index.html"
+    "toggle": "open packages/toggle-switch/index.html",
+    "chat": "yarn workspace chat-app dev"
   }
 }
