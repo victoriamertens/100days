@@ -4,16 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "description": "A live chat application using Socket.IO",
-  "main": "index.js",
+  "main": "server/index.js",
   "author": "Victoria Mertens ",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "dev:frontend": "vite",
+    "dev:backend": "nodemon server/index.js",
+    "dev": "concurrently 'npm:dev:frontend' 'npm:dev:backend'"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
+    "concurrently": "^8.2.0",
     "express": "^4.18.2",
     "node": "^20.2.0",
     "pg": "^8.11.0",
