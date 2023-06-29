@@ -19,15 +19,15 @@ const cityToWeather = async (city) => {
   return weather;
 };
 
-// const fetchCoordinates = (city) => {
-//   console.log('In Coorinates', city);
-//   return 0;
-// };
+const fetchCoordinates = (city) => {
+  console.log('In Coorinates', city);
+  return 0;
+};
 
-// const fetchWeather = (coordinates) => {
-//   console.log('In weather', coordinates);
-//   return 0;
-// };
+const fetchWeather = (coordinates) => {
+  console.log('In weather', coordinates);
+  return 0;
+};
 
-const fetchAPIs = { cityToWeather };
+const fetchAPIs = { cityToWeather, fetchCoordinates, fetchWeather };
 export default fetchAPIs;
