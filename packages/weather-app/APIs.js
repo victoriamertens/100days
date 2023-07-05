@@ -34,7 +34,6 @@ const fetchCoordinates = async (city) => {
   })
     .then((res) => {
       console.log('RESPONSE::', res);
-      // res.headers('Access-Control-Allow-Origin', '*');
       let formattedCoordinates = [res.data[0].latitude, res.data[0].longitude];
       response = formattedCoordinates;
     })
@@ -45,8 +44,9 @@ const fetchCoordinates = async (city) => {
 
 const fetchWeather = async (coordinates) => {
   console.log('In fetchWeather', coordinates);
-  let url =
-    hiddedWeatherAPIUrl + 'lat=' + coordinates.lat + '&lon=' + coordinates.lon;
+  let lat = coordinates[0];
+  let lon = coordinates[1];
+  let url = hiddedWeatherAPIUrl + 'lat=' + lat + '&lon=' + lon;
 
   let response;
   await axios({ method: 'GET', url: url })
@@ -55,7 +55,7 @@ const fetchWeather = async (coordinates) => {
   console.log('fetchCoordinates response:', response);
   return response;
 };
-console.log('TESTING FUNCTION:', fetchCoordinates('Minneapolis'));
+console.log('TESTING FUNCTION:', fetchWeather([44.9772995, -93.2654692]));
 
 const fetchAPIs = { cityToWeather, fetchCoordinates, fetchWeather };
 export default fetchAPIs;
