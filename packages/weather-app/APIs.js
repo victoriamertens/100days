@@ -27,8 +27,17 @@ const fetchCoordinates = async (city) => {
   console.log('In fetchCoordinates', city);
   let url = hiddenAPIUrl + city;
   let response;
-  await axios({ method: 'GET', url: url })
-    .then((res) => (response = res))
+  await axios({
+    method: 'GET',
+    url: url,
+    withCredentials: false,
+  })
+    .then((res) => {
+      console.log('RESPONSE::', res);
+      // res.headers('Access-Control-Allow-Origin', '*');
+      let formattedCoordinates = [res.data[0].latitude, res.data[0].longitude];
+      response = formattedCoordinates;
+    })
     .catch((err) => console.log('fetchCoordinates Errored:', err));
   console.log('fetchCoordinates response:', response);
   return response;
