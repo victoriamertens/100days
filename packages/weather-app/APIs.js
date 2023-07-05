@@ -5,18 +5,6 @@ import {
 } from './HiddenAPI';
 import axios from 'axios';
 
-//Decided to implement Amazon's Lambda service to handle the http request to keep app fully frontend/serverless
-// axios({
-//   method: 'GET',
-//   url: 'https://api.api-ninjas.com/v1/geocoding?city=' + searchTerm,
-//   header: { 'X-Api-Key': keyNinja },
-// })
-//   .then((res) => res.json()) // parse response as JSON
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((err) => console.log(err));
-
 const cityToWeather = async (city) => {
   let coordinates = await fetchCoordinates(city);
   let weather = await fetchWeather(coordinates);
@@ -33,12 +21,10 @@ const fetchCoordinates = async (city) => {
     withCredentials: false,
   })
     .then((res) => {
-      console.log('RESPONSE::', res);
       let formattedCoordinates = [res.data[0].latitude, res.data[0].longitude];
       response = formattedCoordinates;
     })
     .catch((err) => console.log('fetchCoordinates Errored:', err));
-  console.log('fetchCoordinates response:', response);
   return response;
 };
 
@@ -50,12 +36,12 @@ const fetchWeather = async (coordinates) => {
 
   let response;
   await axios({ method: 'GET', url: url })
-    .then((res) => (response = res))
+    .then((res) => (response = res.data))
     .catch((err) => console.log('fetchCoordinates Errored:', err));
-  console.log('fetchCoordinates response:', response);
+
   return response;
 };
-console.log('TESTING FUNCTION:', fetchWeather([44.9772995, -93.2654692]));
+console.log('TESTING FUNCTION:', await cityToWeather('Minneapolis'));
 
 const fetchAPIs = { cityToWeather, fetchCoordinates, fetchWeather };
 export default fetchAPIs;
