@@ -1,7 +1,7 @@
 import WeatherCard from './WeatherCard';
 import './App.css';
 import { response } from '../weatherCodes.js';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import fetchAPIs from '../APIs';
 
 function App() {
@@ -9,6 +9,11 @@ function App() {
   let [weather, setWeather] = useState(response);
   let [updating, setUpdating] = useState(false);
   let [city, setCity] = useState('Minneapolis');
+  let [position, setPosition] = useState([]);
+
+  useEffect(() => {
+    showPosition();
+  }, []);
 
   const setNewWeather = async (city) => {
     setUpdating(true);
@@ -17,6 +22,24 @@ function App() {
     setWeather(weather);
     setUpdating(false);
   };
+
+  async function showPosition() {
+    if (navigator.geolocation) {
+      console.log('In showposition');
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var positionInfo = [
+          position.coords.latitude,
+          position.coords.longitude,
+        ];
+        console.log('LOOK:', positionInfo);
+        setPosition(positionInfo);
+      });
+    } else {
+      alert('Sorry, your browser does not support HTML5 geolocation.');
+    }
+  }
+
+  console.log('Position:', position);
   if (updating) {
     return <p>LOADING...</p>;
   }
