@@ -37,7 +37,7 @@ export default function WeatherCard(responseObj) {
         </div>
         <div className="right">
           <h3 id="day">Today</h3>
-          <h1 id="location">New York</h1>
+          <h1 id="location">{responseObj.city}</h1>
           <h3 id="temp">Temperature: {temp}° F</h3>
           <h3 id="des">{description}</h3>
         </div>

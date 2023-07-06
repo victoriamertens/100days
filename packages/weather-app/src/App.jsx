@@ -8,9 +8,11 @@ function App() {
   let [input, setInput] = useState('');
   let [weather, setWeather] = useState(response);
   let [updating, setUpdating] = useState(false);
+  let [city, setCity] = useState('Minneapolis');
 
   const setNewWeather = async (city) => {
     setUpdating(true);
+    setCity(city);
     let weather = await fetchAPIs.cityToWeather(city);
     setWeather(weather);
     setUpdating(false);
@@ -31,7 +33,7 @@ function App() {
           Search
         </button>
       </div>
-      <WeatherCard response={weather} />
+      <WeatherCard response={weather} city={city} />
     </div>
   );
 }
