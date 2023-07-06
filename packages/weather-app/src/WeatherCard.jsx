@@ -44,7 +44,7 @@ export default function WeatherCard(responseObj) {
       </div>
       <div id="forecast">
         {dayForecastArr.map((day) => {
-          if (day !== dayForecastArr[0]) {
+          if (day !== dayForecastArr[0] && todayCounter <= 3) {
             todayCounter++;
             return (
               <NextDays
