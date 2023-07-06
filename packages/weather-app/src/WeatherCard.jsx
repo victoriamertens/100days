@@ -3,12 +3,31 @@ import './WeatherCard.css';
 import { codeToIcon } from '../weatherCodes';
 
 export default function WeatherCard(responseObj) {
-  let dayForecastArr = responseObj.response.list;
-
-  let todayData = dayForecastArr[0];
-  let iconToday = codeToIcon(todayData.weather[0].id);
+  console.log('ResponseObj incoming:', responseObj);
   let todayCode = new Date().getDay();
   let todayCounter = 0;
+
+  let dayForecastArr;
+  let todayData;
+  let iconToday;
+  let temp;
+  let description;
+
+  if (responseObj.response.list !== undefined) {
+    console.log('In original Data:', responseObj.response.list);
+    dayForecastArr = responseObj.response.list;
+    todayData = dayForecastArr[0];
+    iconToday = codeToIcon(todayData.weather[0].id);
+    temp = todayData.main.temp;
+    description = todayData.weather[0].description;
+  } else if (responseObj.response.list === undefined) {
+    dayForecastArr = responseObj.response.daily;
+    todayData = dayForecastArr[0];
+    console.log('CHECK:', responseObj.response.list === false);
+    iconToday = codeToIcon(todayData.weather[0].id);
+    temp = todayData.temp.day;
+    description = todayData.weather[0].description;
+  }
 
   return (
     <div id="weather-card">
@@ -19,8 +38,8 @@ export default function WeatherCard(responseObj) {
         <div className="right">
           <h3 id="day">Today</h3>
           <h1 id="location">New York</h1>
-          <h3 id="temp">Temperature: {todayData.main.temp}° F</h3>
-          <h3 id="des">{todayData.weather[0].description}</h3>
+          <h3 id="temp">Temperature: {temp}° F</h3>
+          <h3 id="des">{description}</h3>
         </div>
       </div>
       <div id="forecast">

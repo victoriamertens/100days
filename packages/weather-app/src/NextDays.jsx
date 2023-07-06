@@ -13,8 +13,14 @@ export default function NextDays(props) {
     8: 'Monday',
     9: 'Tuesday',
   };
+  console.log('TEMP,', props);
+  let temp;
+  if (props.info.main === undefined) {
+    temp = props.info.temp.day;
+  } else {
+    temp = props.info.main.temp;
+  }
 
-  let temp = props.info.main.temp;
   return (
     <div className="forecast">
       <p className="day">{dayOfWeek[props.day]}</p>

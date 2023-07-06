@@ -7,12 +7,17 @@ import fetchAPIs from '../APIs';
 function App() {
   let [input, setInput] = useState('');
   let [weather, setWeather] = useState(response);
+  let [updating, setUpdating] = useState(false);
 
-  const setNewWeather = (city) => {
-    let weather = fetchAPIs.cityToWeather(city);
+  const setNewWeather = async (city) => {
+    setUpdating(true);
+    let weather = await fetchAPIs.cityToWeather(city);
     setWeather(weather);
+    setUpdating(false);
   };
-
+  if (updating) {
+    return <p>LOADING...</p>;
+  }
   return (
     <div id="whole-app">
       <div id="search">
