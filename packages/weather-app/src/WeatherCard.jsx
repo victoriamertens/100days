@@ -38,7 +38,9 @@ export default function WeatherCard(responseObj) {
         <div className="right">
           <h3 id="day">Today</h3>
           <h1 id="location">{responseObj.city}</h1>
-          <h3 id="temp">Temperature: {temp}° F</h3>
+          <h3 id="temp">
+            Temperature: {((temp - 273) * (9 / 5) + 32).toFixed(1)}° F
+          </h3>
           <h3 id="des">{description}</h3>
         </div>
       </div>

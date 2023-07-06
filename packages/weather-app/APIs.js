@@ -41,7 +41,6 @@ const fetchWeather = async (coordinates) => {
 
   return response;
 };
-console.log('TESTING FUNCTION:', await cityToWeather('Minneapolis'));
 
 const fetchAPIs = { cityToWeather, fetchCoordinates, fetchWeather };
 export default fetchAPIs;

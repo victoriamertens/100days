@@ -26,20 +26,21 @@ function App() {
   async function showPosition() {
     if (navigator.geolocation) {
       console.log('In showposition');
-      navigator.geolocation.getCurrentPosition(function (position) {
+      navigator.geolocation.getCurrentPosition(async function (position) {
         var positionInfo = [
           position.coords.latitude,
           position.coords.longitude,
         ];
-        console.log('LOOK:', positionInfo);
-        setPosition(positionInfo);
+
+        console.log('Here it is:', positionInfo);
+        let fetchedWeather = await fetchAPIs.fetchWeather(positionInfo);
+        setWeather(fetchedWeather);
       });
     } else {
       alert('Sorry, your browser does not support HTML5 geolocation.');
     }
   }
 
-  console.log('Position:', position);
   if (updating) {
     return <p>LOADING...</p>;
   }

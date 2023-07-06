@@ -25,7 +25,7 @@ export default function NextDays(props) {
     <div className="forecast">
       <p className="day">{dayOfWeek[props.day]}</p>
       <img className="forecast-icon" src={props.weathericon} alt="cloud" />
-      <p className="temp">{temp}</p>
+      <p className="temp">{((temp - 273) * (9 / 5) + 32).toFixed(1)}° F</p>
     </div>
   );
 }
