@@ -7,11 +7,11 @@ import fetchAPIs from '../APIs';
 function App() {
   let [input, setInput] = useState('');
   let [weather, setWeather] = useState(response);
-  let [updating, setUpdating] = useState(false);
-  let [city, setCity] = useState('Minneapolis');
-  let [position, setPosition] = useState([]);
+  let [updating, setUpdating] = useState(true);
+  let [city, setCity] = useState('');
 
   useEffect(() => {
+    console.log('In useEffect of App');
     showPosition();
   }, []);
 
@@ -35,6 +35,8 @@ function App() {
         console.log('Here it is:', positionInfo);
         let fetchedWeather = await fetchAPIs.fetchWeather(positionInfo);
         setWeather(fetchedWeather);
+        setCity(fetchedWeather.timezone);
+        setUpdating(false);
       });
     } else {
       alert('Sorry, your browser does not support HTML5 geolocation.');
