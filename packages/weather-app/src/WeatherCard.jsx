@@ -32,10 +32,12 @@ export default function WeatherCard(responseObj) {
     <div id="weather-card">
       <div id="today">
         <div className="left">
-          <img id="main-svg" src={iconToday} alt="icon" />
+          <img id="main-svg" src={iconToday} alt="weather icon" />
         </div>
         <div className="right">
-          <h3 id="day">Today</h3>
+          <h3 id="day" aria-label="Weather for Today">
+            Today
+          </h3>
           <h1 id="location">{responseObj.city}</h1>
           <h3 id="temp">
             Temperature: {((temp - 273) * (9 / 5) + 32).toFixed(1)}° F

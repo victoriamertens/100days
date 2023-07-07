@@ -14,14 +14,6 @@ function App() {
     showPosition();
   }, []);
 
-  const setNewWeather = async (city) => {
-    setUpdating(true);
-    setCity(city);
-    let weather = await fetchAPIs.cityToWeather(city);
-    setWeather(weather);
-    setUpdating(false);
-  };
-
   async function showPosition() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async function (position) {
@@ -40,6 +32,14 @@ function App() {
     }
   }
 
+  const fetchWeatherCityInput = async (city) => {
+    setUpdating(true);
+    setCity(city);
+    let weather = await fetchAPIs.cityToWeather(city);
+    setWeather(weather);
+    setUpdating(false);
+  };
+
   if (updating) {
     return <p>LOADING...</p>;
   }
@@ -50,9 +50,10 @@ function App() {
           placeholder="Enter a City..."
           type="text"
           id="city-input"
+          aria-label="Search for new city"
           onChange={(e) => setInput(e.target.value)}
         ></input>
-        <button id="search-btn" onClick={() => setNewWeather(input)}>
+        <button id="search-btn" onClick={() => fetchWeatherCityInput(input)}>
           Search
         </button>
       </div>
