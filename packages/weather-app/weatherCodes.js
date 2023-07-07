@@ -1,5 +1,3 @@
-//Example response from API, using while I wait for API key to be activated
-
 function codeToIcon(code) {
   if (code === 800) {
     return icons[7];
@@ -9,10 +7,10 @@ function codeToIcon(code) {
 }
 
 let icons = {
-  2: 'thunder',
+  2: '/src/Icons/thunder.svg',
   3: '/src/Icons/cloudy.svg',
-  4: 'rain',
-  5: 'snow',
+  4: 'snow',
+  5: '/src/Icons/rainy.svg',
   6: 'atmosphere',
   7: '/src/Icons/sunny.svg',
   8: '/src/Icons/partly.svg',

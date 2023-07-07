@@ -7,6 +7,7 @@ export default function WeatherCard(responseObj) {
   let todayCounter = 0;
 
   let dayForecastArr = responseObj.response.daily;
+
   let todayData = dayForecastArr[0];
   let iconToday = codeToIcon(todayData.weather[0].id);
   let temp = todayData.temp.day;
@@ -38,7 +39,9 @@ export default function WeatherCard(responseObj) {
                 key={day.dt}
                 info={day}
                 day={todayCode + todayCounter}
-                weathericon={codeToIcon(dayForecastArr[1].weather[0].id)} //Hard Coded - need to update
+                weathericon={codeToIcon(
+                  dayForecastArr[todayCounter].weather[0].id
+                )}
               />
             );
           }

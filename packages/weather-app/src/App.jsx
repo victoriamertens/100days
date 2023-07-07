@@ -1,6 +1,5 @@
 import WeatherCard from './WeatherCard';
 import './App.css';
-// import { response } from '../weatherCodes.js';
 import { useState, useEffect } from 'react';
 import fetchAPIs from '../APIs';
 
@@ -11,33 +10,49 @@ function App() {
   let [city, setCity] = useState('');
 
   useEffect(() => {
-    showPosition();
+    fetchGeolocation();
   }, []);
 
-  async function showPosition() {
+  //getCurrentPosition takes in two callbacks, one to run on success, one to run on error
+  function fetchGeolocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(async function (position) {
-        var positionInfo = [
-          position.coords.latitude,
-          position.coords.longitude,
-        ];
-
-        let fetchedWeather = await fetchAPIs.fetchWeather(positionInfo);
-        setWeather(fetchedWeather);
-        setCity(fetchedWeather.timezone);
-        setUpdating(false);
-      });
+      navigator.geolocation.getCurrentPosition(
+        successfulGeolocationCall,
+        erroredGeolocationCall
+      );
     } else {
       alert('Sorry, your browser does not support HTML5 geolocation.');
     }
   }
 
+  //To handle error of fetchWeather API call, I wrapped the process in a try-catch block inside the callback
+  async function successfulGeolocationCall(position) {
+    var positionInfo = [position.coords.latitude, position.coords.longitude];
+    console.log(positionInfo);
+    try {
+      let fetchedWeather = await fetchAPIs.fetchWeather(positionInfo);
+      setWeather(fetchedWeather);
+      setCity(fetchedWeather.timezone);
+      setUpdating(false);
+    } catch (err) {
+      console.log('Error with fetchWeather call:', err);
+    }
+  }
+
+  function erroredGeolocationCall(error) {
+    console.log('Errored Geolocation:', error);
+  }
+
   const fetchWeatherCityInput = async (city) => {
-    setUpdating(true);
-    setCity(city);
-    let weather = await fetchAPIs.cityToWeather(city);
-    setWeather(weather);
-    setUpdating(false);
+    try {
+      setUpdating(true);
+      setCity(city);
+      let weather = await fetchAPIs.cityToWeather(city);
+      setWeather(weather);
+      setUpdating(false);
+    } catch (err) {
+      console.log('Error in fetching Weather from Input:', err);
+    }
   };
 
   if (updating) {
