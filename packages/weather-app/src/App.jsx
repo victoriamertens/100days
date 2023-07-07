@@ -46,12 +46,16 @@ function App() {
   const fetchWeatherCityInput = async (city) => {
     try {
       setUpdating(true);
-      setCity(city);
       let weather = await fetchAPIs.cityToWeather(city);
+      setCity(city);
       setWeather(weather);
       setUpdating(false);
     } catch (err) {
       console.log('Error in fetching Weather from Input:', err);
+      alert(
+        'Sorry, could not find information. Check you input and try again.'
+      );
+      setUpdating(false);
     }
   };
 
