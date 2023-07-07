@@ -11,7 +11,6 @@ function App() {
   let [city, setCity] = useState('');
 
   useEffect(() => {
-    console.log('In useEffect of App');
     showPosition();
   }, []);
 
@@ -25,14 +24,12 @@ function App() {
 
   async function showPosition() {
     if (navigator.geolocation) {
-      console.log('In showposition');
       navigator.geolocation.getCurrentPosition(async function (position) {
         var positionInfo = [
           position.coords.latitude,
           position.coords.longitude,
         ];
 
-        console.log('Here it is:', positionInfo);
         let fetchedWeather = await fetchAPIs.fetchWeather(positionInfo);
         setWeather(fetchedWeather);
         setCity(fetchedWeather.timezone);

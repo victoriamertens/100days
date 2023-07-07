@@ -29,7 +29,6 @@ const fetchCoordinates = async (city) => {
 };
 
 const fetchWeather = async (coordinates) => {
-  console.log('In fetchWeather', coordinates);
   let lat = coordinates[0];
   let lon = coordinates[1];
   let url = hiddedWeatherAPIUrl + 'lat=' + lat + '&lon=' + lon;

@@ -3,7 +3,6 @@ import './WeatherCard.css';
 import { codeToIcon } from '../weatherCodes';
 
 export default function WeatherCard(responseObj) {
-  console.log('ResponseObj incoming:', responseObj);
   let todayCode = new Date().getDay();
   let todayCounter = 0;
 
@@ -23,7 +22,7 @@ export default function WeatherCard(responseObj) {
   } else if (responseObj.response.list === undefined) {
     dayForecastArr = responseObj.response.daily;
     todayData = dayForecastArr[0];
-    console.log('CHECK:', responseObj.response.list === false);
+
     iconToday = codeToIcon(todayData.weather[0].id);
     temp = todayData.temp.day;
     description = todayData.weather[0].description;

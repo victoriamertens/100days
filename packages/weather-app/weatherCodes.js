@@ -217,7 +217,7 @@ function codeToIcon(code) {
   if (code === 800) {
     return icons[7];
   }
-  console.log(Math.floor(code / 100));
+
   return icons[Math.floor(code / 100)];
 }
 
