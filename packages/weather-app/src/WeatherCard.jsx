@@ -6,27 +6,11 @@ export default function WeatherCard(responseObj) {
   let todayCode = new Date().getDay();
   let todayCounter = 0;
 
-  let dayForecastArr;
-  let todayData;
-  let iconToday;
-  let temp;
-  let description;
-
-  if (responseObj.response.list !== undefined) {
-    console.log('In original Data:', responseObj.response.list);
-    dayForecastArr = responseObj.response.list;
-    todayData = dayForecastArr[0];
-    iconToday = codeToIcon(todayData.weather[0].id);
-    temp = todayData.main.temp;
-    description = todayData.weather[0].description;
-  } else if (responseObj.response.list === undefined) {
-    dayForecastArr = responseObj.response.daily;
-    todayData = dayForecastArr[0];
-
-    iconToday = codeToIcon(todayData.weather[0].id);
-    temp = todayData.temp.day;
-    description = todayData.weather[0].description;
-  }
+  let dayForecastArr = responseObj.response.daily;
+  let todayData = dayForecastArr[0];
+  let iconToday = codeToIcon(todayData.weather[0].id);
+  let temp = todayData.temp.day;
+  let description = todayData.weather[0].description;
 
   return (
     <div id="weather-card">
@@ -54,7 +38,7 @@ export default function WeatherCard(responseObj) {
                 key={day.dt}
                 info={day}
                 day={todayCode + todayCounter}
-                weathericon={codeToIcon(dayForecastArr[1].weather[0].id)}
+                weathericon={codeToIcon(dayForecastArr[1].weather[0].id)} //Hard Coded - need to update
               />
             );
           }
