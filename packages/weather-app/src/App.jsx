@@ -10,7 +10,7 @@ function App() {
   let [city, setCity] = useState('');
 
   useEffect(() => {
-    fetchGeolocation();
+    // fetchGeolocation();
   }, []);
 
   //getCurrentPosition takes in two callbacks, one to run on success, one to run on error
@@ -61,7 +61,15 @@ function App() {
   };
 
   if (updating) {
-    return <p>LOADING...</p>;
+    return (
+      <div id="loading">
+        <div className="load-annimation"></div>
+        <div className="load-annimation"></div>
+        <div className="load-annimation"></div>
+        <div className="load-annimation"></div>
+        <div className="load-annimation"></div>
+      </div>
+    );
   }
   return (
     <div id="whole-app">

@@ -34,3 +34,51 @@
   background-color: white;
   color: rgb(71, 71, 71);
 }
+
+#loading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.load-annimation {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.5rem;
+  animation: scaling 2.5s ease-in-out infinite;
+}
+
+@keyframes scaling {
+  0%,
+  100% {
+    transform: scale(0.2);
+    background-color: purple;
+  }
+  40% {
+    transform: scale(1);
+    background-color: blue;
+  }
+  50% {
+    transform: scale(1);
+    background-color: blueviolet;
+  }
+}
+
+div:nth-child(1) {
+  animation-delay: 0.2s;
+}
+div:nth-child(2) {
+  animation-delay: 0.4s;
+}
+div:nth-child(3) {
+  animation-delay: 0.6s;
+}
+div:nth-child(4) {
+  animation-delay: 0.8s;
+}
+div:nth-child(5) {
+  animation-delay: 0.9s;
+}
