@@ -10,7 +10,7 @@ function App() {
   let [city, setCity] = useState('');
 
   useEffect(() => {
-    // fetchGeolocation();
+    fetchGeolocation();
   }, []);
 
   //getCurrentPosition takes in two callbacks, one to run on success, one to run on error

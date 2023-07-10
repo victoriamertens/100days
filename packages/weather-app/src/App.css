@@ -49,6 +49,7 @@
   display: inline-block;
   margin: 0.5rem;
   animation: scaling 2.5s ease-in-out infinite;
+  margin-top: 100px;
 }
 
 @keyframes scaling {
