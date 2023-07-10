@@ -41,5 +41,16 @@ const fetchWeather = async (coordinates) => {
   return response;
 };
 
-const fetchAPIs = { cityToWeather, fetchCoordinates, fetchWeather };
+const errorData = {
+  timezone: 'Location',
+  daily: [
+    { temp: { day: 0.0 }, weather: { id: 800, description: '' } },
+    { temp: { day: 0.0 }, weather: { id: 800, description: '' } },
+    { temp: { day: 0.0 }, weather: { id: 800, description: '' } },
+    { temp: { day: 0.0 }, weather: { id: 800, description: '' } },
+    { temp: { day: 0.0 }, weather: { id: 800, description: '' } },
+  ],
+};
+
+const fetchAPIs = { cityToWeather, fetchCoordinates, fetchWeather, errorData };
 export default fetchAPIs;

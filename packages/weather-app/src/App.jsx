@@ -22,6 +22,7 @@ function App() {
       );
     } else {
       alert('Sorry, your browser does not support HTML5 geolocation.');
+      setWeather(fetchAPIs.errorData);
     }
   }
 
