@@ -1,10 +1,11 @@
-//Below is the Lambda Function I named 'requestWeather'. It connects to the OpenWeather API to request weather data for the lat and long it is provided
+**Below is the Lambda Function I named 'requestWeather'. It connects to the OpenWeather API to request weather data for the lat and long it is provided**
+
+**NOTE: the below function is sent the lat and lon as parameters of the request named lat and lon.**
 
 import axios from 'axios';
 
 export const handler = async(event, context) => {
 // TODO
-console.log("TEsting the weather", JSON.stringify(event))
 let lat = event.queryStringParameters.lat;
 let lon = event.queryStringParameters.lon;
 let api_key = {yourAPIKey};
@@ -30,7 +31,9 @@ let url = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + lat + '&lon='
 
 }
 
-//Below is the Lambda function I named 'requestCoordinates'. This API connects to the API Ninja's City API to convert a city name to a lat and lon pair.
+**//Below is the Lambda function I named 'requestCoordinates'. This API connects to the API Ninja's City API to convert a city name to a lat and lon pair.**
+
+**NOTE: The below function is sent the city (named searchTerm) as a path parameter in the url of the request.**
 
 import https from "https";
 import axios from 'axios';
@@ -59,6 +62,5 @@ let url = 'https://api.api-ninjas.com/v1/geocoding?city=' + city;
 console.log("RESPONSE:", formattedResponse)
 
     return formattedResponse;
-
 
 };
