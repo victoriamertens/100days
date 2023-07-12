@@ -1,3 +1,5 @@
+## requestWeather Function
+
 **Below is the Lambda Function I named 'requestWeather'. It connects to the OpenWeather API to request weather data for the lat and long it is provided**
 
 **NOTE: the below function is sent the lat and lon as parameters of the request named lat and lon.**
@@ -30,6 +32,8 @@ let url = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + lat + '&lon='
     return formattedResponse
 
 }
+
+## requestCoordinates function
 
 **//Below is the Lambda function I named 'requestCoordinates'. This API connects to the API Ninja's City API to convert a city name to a lat and lon pair.**
 
@@ -64,3 +68,5 @@ console.log("RESPONSE:", formattedResponse)
     return formattedResponse;
 
 };
+
+**In order to import axios into the Lambda function you will have to set up an AWS Layer for axios within the AWS environment. This resource helps to explain AWS Layers and how to use them: [Working with Layers](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-layers.html);**
