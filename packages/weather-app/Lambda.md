@@ -29,3 +29,36 @@ let url = 'https://api.openweathermap.org/data/3.0/onecall?lat=' + lat + '&lon='
     return formattedResponse
 
 }
+
+//Below is the Lambda function I named 'requestCoordinates'. This API connects to the API Ninja's City API to convert a city name to a lat and lon pair.
+
+import https from "https";
+import axios from 'axios';
+
+export const handler = async(event, context) => {
+let city = event.pathParameters.searchTerm;
+let api_key = {Your APIKey}
+let url = 'https://api.api-ninjas.com/v1/geocoding?city=' + city;
+
+    let result = await axios({method: 'GET', url: url, headers: {
+            'X-Api-Key': api_key}});
+
+
+
+    let formattedResponse = {
+    "statusCode": 200,
+    "body": JSON.stringify(result.data),
+     "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Methods": "*"
+        },
+
+}
+
+console.log("RESPONSE:", formattedResponse)
+
+    return formattedResponse;
+
+
+};
