@@ -2,7 +2,7 @@
 import {
   coordinatesAPIUrl as hiddenAPIUrl,
   weatherAPIUrl as hiddedWeatherAPIUrl,
-} from './HiddenAPI';
+} from '../HiddenAPI';
 import axios from 'axios';
 
 const cityToWeather = async (city) => {
@@ -25,6 +25,7 @@ const fetchCoordinates = async (city) => {
       response = formattedCoordinates;
     })
     .catch((err) => console.log('fetchCoordinates Errored:', err));
+  console.log('In fetchCoordinates', response);
   return response;
 };
 

@@ -1,7 +1,7 @@
 import WeatherCard from './WeatherCard';
 import './App.css';
 import { useState, useEffect } from 'react';
-import fetchAPIs from '../APIs';
+import fetchAPIs from './APIs';
 
 function App() {
   let [input, setInput] = useState('');

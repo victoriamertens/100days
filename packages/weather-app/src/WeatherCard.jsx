@@ -1,6 +1,6 @@
 import NextDays from './NextDays';
 import './WeatherCard.css';
-import { codeToIcon } from '../weatherCodes';
+import { codeToIcon } from './weatherCodes';
 
 export default function WeatherCard(responseObj) {
   let todayCode = new Date().getDay();
