@@ -2,6 +2,8 @@
 
 This application was designed to showcase weather information for a user's geolocation and any addition city the user enters into the search bar. It is a simple application, but under the hood, the Weather App is completely serverless, using AWS Lambda and API Gateway to connect the application to each API endpoint.
 
+![image](./public/app-image.png)
+
 ## Application Description
 
 On page load, the application utilizes HTML5's geolocation function to capture the user's latitude and longitude to send it, via Lambda, to OpeanWeather's 'One Call API 3.0'. The program displays this information when the weather data returns from the API. From initial page load, the user can enter in the name of a city into the search bar and run an API call, through Lambda, to API Ninja's City API to convert the city name into latitude and longitude, and then to OpenWeather's API to retrieve the weather data for that city.
@@ -26,7 +28,18 @@ Once those are all set up, there is a good chunk of work to be done to set up La
 
 In the project, I have included a file called 'Lambda.md' that has a skeleton of the two Lambda Functions (serverless functions) that run when I hit the API Gateway attached to it, as well as some notes on configurations I had to use to get it all up and running.
 
-Finally, to run this program from the root project (100 Days), you can run the command line: `yarn run weather` to host it locally on localhost:5173.
+Finally, to run this program from the root project (100 Days), you can run this series of prompts in the command line:
+
+`yarn install` to install dependencies for the project.
+`yarn run weather` to host it locally on localhost:5173.
+
+**A note: this project will not run properly if your browser automatically blocks location services. You will need to disable the block or click 'allow' when propmpted for request for geolocation.**
+
+You can also test the project by running:
+`yarn weather_test`
+
+Or test the coverage with:
+`yarn weather_coverage`
 
 ## Credits
 
