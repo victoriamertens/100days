@@ -6,9 +6,11 @@ This application was designed to showcase weather information for a user's geolo
 
 ## Application Description
 
-On page load, the application utilizes HTML5's geolocation function to capture the user's latitude and longitude to send it, via Lambda, to OpeanWeather's 'One Call API 3.0'. The program displays this information when the weather data returns from the API. From initial page load, the user can enter in the name of a city into the search bar and run an API call, through Lambda, to API Ninja's City API to convert the city name into latitude and longitude, and then to OpenWeather's API to retrieve the weather data for that city.
+On page load, the application utilizes HTML5's geolocation function to capture the user's latitude and longitude and sends the data, via Lambda, to OpeanWeather's 'One Call API 3.0'. The program displays this information when the weather data returns from the API. From initial page load, the user can enter in the name of a city into the search bar and run an API call, through Lambda, to API Ninja's City API to convert the city name into latitude and longitude, and then to OpenWeather's API to retrieve the weather data for that city, displaying the weather data for that city.
 
-I had the idea to make the Weather Application serverless because I was looking for a challenge and an opportunity to grow my understanding of application models and API calls. As I learned more about serverless computing and the rapid growth and utilization of cloud-based solutions, I ultimately decided it would be good practice for future employment. AWS Lambda stood out to me because it supports Node, which is my preferred backend language, its ability to integrate with a large list of other AWS services, and overall maturity and utilization in the market.
+I had the idea to make the Weather Application serverless because I was looking for a challenge and an opportunity to grow my understanding of application models and API calls. As I learned more about serverless computing and the rapid growth and utilization of cloud-based solutions, I ultimately decided the decision would be good practice for future employment. AWS Lambda stood out to me because it supports Node, which is my preferred backend language, its ability to integrate with a large list of other AWS services, and overall maturity and utilization in the market.
+
+The major challenge I faced in this project was understanding AWS Lambda and API Gateway, particularly with configuring the request integrations and response structures. Ultimately, I solved these problems with a combination or reading the documentation and identifying holes in my understanding and actively seeking out resources to learn from. While this pushed me to learn a great deal about cloud-based infrastructure and how browsers work, I am most proud of how this challenge has expanded my problem solving strategies. By the end of the project, I feel better equipped to identify and isolate code problems and leverage documentation to effectively troubleshoot problems.
 
 While I am glad I pursued this learning experience, in the future I will likely be looking more closely at Netlify's or Vercel's serverless functions, since they create less friction for developers and are built on top of AWS Lambda.
 
@@ -33,7 +35,7 @@ Finally, to run this program from the root project (100 Days), you can run this 
 `yarn install` to install dependencies for the project.
 `yarn run weather` to host it locally on localhost:5173.
 
-**A note: this project will not run properly if your browser automatically blocks location services. You will need to disable the block or click 'allow' when propmpted for request for geolocation.**
+**A note: this project will not run properly if your browser automatically blocks location services. You will need to disable the block or click 'allow' when prompted for request for geolocation.**
 
 You can also test the project by running:
 `yarn weather_test`
