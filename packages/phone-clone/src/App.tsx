@@ -9,7 +9,9 @@ function App() {
   return (
     <div id="whole-app">
       <div id="left-button"></div>
-      <div id="phone-body"></div>
+      <div id="phone-body">
+        <div id="screen"></div>
+      </div>
       <div id="right-button"></div>
     </div>
   );
