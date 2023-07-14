@@ -1,5 +1,9 @@
 #phone-body {
   background-color: black;
-  height: 100px;
-  width: 100px;
+  height: 550px;
+  width: 275px;
+  border-top-left-radius: 55px 45px;
+  border-top-right-radius: 55px 45px;
+  border-bottom-right-radius: 55px 45px;
+  border-bottom-left-radius: 55px 45px;
 }
