@@ -7,9 +7,11 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div id="whole-app">
+      <div id="left-button"></div>
       <div id="phone-body"></div>
-    </>
+      <div id="right-button"></div>
+    </div>
   );
 }
 
