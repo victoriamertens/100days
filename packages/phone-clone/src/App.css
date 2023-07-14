@@ -37,3 +37,36 @@
   height: 450px;
   width: 265px;
 }
+
+#logo {
+  color: silver;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+}
+
+#accessories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0px;
+  margin-top: -50px;
+  padding: 0px;
+}
+
+.camera {
+  background-color: aqua;
+  border-radius: 100%;
+  height: 7px;
+  width: 7px;
+  margin: 5px;
+}
+
+#speaker {
+  background-color: white;
+  width: 50px;
+  height: 5px;
+  margin: auto;
+  border-radius: 5px;
+}

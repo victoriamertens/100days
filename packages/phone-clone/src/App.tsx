@@ -10,6 +10,13 @@ function App() {
     <div id="whole-app">
       <div id="left-button"></div>
       <div id="phone-body">
+        <div id="accessories">
+          <div className="camera"></div>
+          <div id="speaker"></div>
+          <div className="camera"></div>
+          <div className="camera"></div>
+        </div>
+        <p id="logo">SAMSUNG</p>
         <div id="screen"></div>
       </div>
       <div id="right-button"></div>
