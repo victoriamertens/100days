@@ -12,7 +12,21 @@ function App() {
       <div id="phone-body">
         <div id="accessories">
           <div className="camera"></div>
-          <div id="speaker"></div>
+          <div id="speaker">
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+            <div className="hole"></div>
+          </div>
           <div className="camera"></div>
           <div className="camera"></div>
         </div>
