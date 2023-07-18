@@ -2,6 +2,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import mountain from './assets/mountain.jpeg';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -31,7 +32,9 @@ function App() {
           <div className="camera"></div>
         </div>
         <p id="logo">SAMSUNG</p>
-        <div id="screen"></div>
+        <div id="screen">
+          <img src={mountain} id="mountain"></img>
+        </div>
       </div>
       <div id="right-button"></div>
     </div>
