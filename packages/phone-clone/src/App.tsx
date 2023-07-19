@@ -37,6 +37,15 @@ function App() {
           <img src={mountain} id="mountain"></img>
           <div id="screen-buttons">
             <Button number={1} letters="" />
+            <Button number={2} letters="" />
+            <Button number={3} letters="" />
+            <Button number={4} letters="" />
+            <Button number={5} letters="" />
+            <Button number={6} letters="" />
+            <Button number={7} letters="" />
+            <Button number={8} letters="" />
+            <Button number={9} letters="" />
+            <Button number={0} letters="" />
           </div>
         </div>
       </div>
