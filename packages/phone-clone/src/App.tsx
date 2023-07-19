@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import mountain from './assets/mountain.jpeg';
-import { Button } from './Button.tsx';
+import Button from './Button.tsx';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -36,7 +36,7 @@ function App() {
         <div id="screen">
           <img src={mountain} id="mountain"></img>
           <div id="screen-buttons">
-            <Button number={1} />
+            <Button number={1} letters="" />
           </div>
         </div>
       </div>
